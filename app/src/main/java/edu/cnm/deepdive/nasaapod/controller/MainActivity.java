@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.media.audiofx.Equalizer.Settings;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity
               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
               startActivity(intent);
             });
+        break;
+      case R.id.settings:
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
         break;
       default:
         handled = super.onOptionsItemSelected(item);
